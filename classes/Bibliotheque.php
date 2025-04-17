@@ -30,7 +30,7 @@ class Bibliotheque {
             'type' => $type
         ]);
 
-        echo "Livre ajouté : {$livre->titre} <br>";
+        echo "Livre ajouté : $livre->titre <br>";
     }
 
     public function emprunterLivre($id) {
@@ -43,7 +43,7 @@ class Bibliotheque {
                 $stmt = $this->pdo->prepare("UPDATE livres SET disponible = 0 WHERE id = :id");
                 $stmt->execute(['id' => $id]);
 
-                echo "Livre emprunté : {$livre->titre}<br>";
+                echo "Livre emprunté : $livre->titre <br>";
                 return;
             }
         }
@@ -60,7 +60,7 @@ class Bibliotheque {
                 $stmt = $this->pdo->prepare("UPDATE livres SET disponible = 1 WHERE id = :id");
                 $stmt->execute(['id' => $id]);
 
-                echo "Livre retourné : {$livre->titre}<br>";
+                echo "Livre retourné : $livre->titre <br>";
                 return;
             }
         }

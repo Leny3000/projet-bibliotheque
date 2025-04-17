@@ -58,7 +58,7 @@ class Livre {
 
     // Méthodes
     public function getInfos() {
-        return "Titre : {$this->titre}, Auteur : {$this->auteur}, Année : {$this->anneePublication}, " .
+        echo "Titre : $this->titre, Auteur : $this->auteur, Année : $this->anneePublication, " .
                "Disponible : " . ($this->disponible ? 'Oui' : 'Non');
     }
 

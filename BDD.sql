@@ -9,22 +9,9 @@ CREATE TABLE IF NOT EXISTS 'livres' (
     'auteur' VARCHAR(255) NOT NULL,
     'annee_publication' INT,
     'disponible' BOOLEAN DEFAULT TRUE,
-    'type' VARCHAR(50) NOT NULL -- "Roman", "BandeDessinee", etc.
-);
-
--- Table pour les romans
-CREATE TABLE IF NOT EXISTS 'romans' (
-    'livre_id' INT PRIMARY KEY,
-    'genre' VARCHAR(100),
-    'nombre_pages' INT,
-    FOREIGN KEY ('livre_id') REFERENCES 'livres'(id) ON DELETE CASCADE
-);
-
--- Table pour les bandes dessinées
-CREATE TABLE IF NOT EXISTS 'bandes_dessinees' (
-    'livre_id' INT PRIMARY KEY,
-    'dessinateur' VARCHAR(255),
-    'serie' VARCHAR(255),
-    'tome' INT,
-    FOREIGN KEY ('livre_id') REFERENCES 'livres'(id) ON DELETE CASCADE
+    'type' ENUM ('livre, roman, BandeDessinee') NOT NULL -- "Roman", "BandeDessinee", etc.
+    'genre' VARCHAR(100) NULL,
+    'nombre_pages' INT NULL,
+    'serie' VARCHAR(255) NULL,
+    'tome' INT NULL,
 );

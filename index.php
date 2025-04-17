@@ -1,9 +1,8 @@
 <?php 
 // Inclure les classes nécessaires
-require_once 'Livre.php';
-require_once 'Roman.php';
-require_once 'BandeDessinee.php';
-require_once 'Bibliotheque.php';
+require "classes/Livre.php";
+require "classes/Roman.php";
+require "classes/BandeDessinee.php";
 
 // Créer une instance de la bibliothèque
 $biblio = new Bibliotheque('database.php');
@@ -16,7 +15,7 @@ $roman1 = new Roman(101, 'Les Misérables', 'Victor Hugo', 1862, true, 'Historiq
 $roman2 = new Roman(102, '1984', 'George Orwell', 1949, true, 'Science-fiction', 328);
 
 $bd1 = new BandeDessinee(201, 'Astérix le Gaulois', 'René Goscinny', 1961, true, 'Albert Uderzo', 'Astérix', 1);
-$bd2 = new BandeDessinee(202, 'La Serpe d’Or', 'René Goscinny', 1962, true, 'Albert Uderzo', 'Astérix', 2);
+$bd2 = new BandeDessinee(202, 'Solo Leveling', 'René Goscinny', 1962, true, 'Albert Uderzo', 'Astérix', 2);
 $bd3 = new BandeDessinee(203, 'Tintin au Congo', 'Hergé', 1931, true, 'Hergé', 'Tintin', 2);
 
 // Ajouter les livres à la bibliothèque

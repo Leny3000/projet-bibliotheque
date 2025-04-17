@@ -31,16 +31,16 @@ class Roman extends Livre {
 
     // Méthodes
     public function getInfos() {
-        return parent::getInfos() . ", Genre : {$this->genre}, Pages : {$this->nombrePages}";
+        echo parent::getInfos() . ", Genre : $this->genre, Pages : $this->nombrePages";
     }
 
     public function tempsLecture() {
         // Estimation du temps de lecture (2 pages par minute)
         if ($this->nombrePages > 0) {
             $minutes = ceil($this->nombrePages / 2);
-            return "Temps de lecture estimé : {$minutes} minutes";
+            echo "Temps de lecture estimé : $minutes minutes";
         } else {
-            return "Nombre de pages invalide.";
+            echo "Nombre de pages invalide.";
         }
     }
 }
